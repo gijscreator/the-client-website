@@ -82,7 +82,15 @@ html {
 
 /* CSS Header */
 
-.white-header {
+.white-header-mobile {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.white-header-desktop {
     background-color: white;
     position: fixed;
     top: 0;
@@ -103,7 +111,7 @@ html {
 .inline-nav > li{
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 /* CSS MAIN */
@@ -119,16 +127,6 @@ html {
   width: 100%;
   height: auto;
 }
-
-.inline-group > * {
-  display: inline;
-}
-
-/* .image > img {
-  border-radius: 10px;
-
-}
-*/
 
 /* CSS FOOTER */
 
@@ -166,11 +164,24 @@ a > svg {
   padding: 3% 0px;
 }
 
+.white-header-desktop {
+  display: none;
+}
+
 @media (min-width: 489px) {
   .images-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
   padding: 5% 0px;
-}
+  }
+  .white-footer {
+    display: none;
+  }
+  .white-header-desktop {
+    display: grid;
+  }
+  .white-header-mobile {
+    display: none;
+  }
 }
