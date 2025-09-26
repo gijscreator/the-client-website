@@ -67,6 +67,10 @@ html {
     background-color: #224455;
 }
 
+main {
+  padding: 2% 5%;
+}
+
 .icon {
     width: 19px;
     height: 19px;
@@ -101,3 +105,6 @@ html {
 /* CSS MAIN */
 
 
+.inline-group > * {
+  display: inline;
+}
