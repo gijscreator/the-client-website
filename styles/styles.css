@@ -1,7 +1,9 @@
 /* CSS RESET */
 
 /* 1. Use a more-intuitive box-sizing model */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -25,103 +27,129 @@ body {
 }
 
 /* 6. Improve media defaults */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 
 /* 7. Inherit fonts for form controls */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
 /* 8. Avoid text overflows */
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: sans-serif;
   overflow-wrap: break-word;
 }
 
-main > p, h1, h2, h3, h4, h5, h6 {
-    color: white;
+main>p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: white;
 }
+
 /* 9. Improve line wrapping */
 p {
   text-wrap: pretty;
 }
-h1, h2, h3, h4, h5, h6 {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-wrap: balance;
 }
 
 /*
   10. Create a root stacking context
 */
-#root, #__next {
+#root,
+#__next {
   isolation: isolate;
 }
 
 ul {
-    list-style:none;
+  list-style: none;
 }
 
 html {
-    background-color: #224455;
+  background-color: #224455;
 }
 
-main {
-
-}
+main {}
 
 .icon {
-    width: 19px;
-    height: 19px;
+  width: 19px;
+  height: 19px;
 }
 
 html {
-    overflow-x: hidden;
+  overflow-x: hidden;
+}
+
+/* CSS Header Desktop*/
+.white-header-desktop {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 /* CSS Header */
 
 .white-header-mobile {
-    background-color: white;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
-.white-header-desktop {
-    background-color: white;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
-
-.inline-nav{
+.inline-nav {
   display: grid;
-  grid-template-rows: repeat(1, 1fr);  
-  grid-auto-flow: column;              
-  grid-auto-columns: 33%;              
+  grid-template-rows: repeat(1, 1fr);
+  grid-auto-flow: column;
+  grid-auto-columns: 33%;
   gap: 10px;
   width: 100%;
   padding: 0;
 }
 
-.inline-nav > li{
+.inline-nav>li {
   display: flex;
   align-items: center;
 }
 
-.inline-nav > .logo{
+.inline-nav>.logo {
   justify-content: space-between;
 }
 
-.inline-nav > .group-selector{
+.inline-nav>.group-selector {
   justify-content: center;
 }
 
-.inline-nav > .grid-view{
+.inline-nav>.grid-view {
   justify-content: center;
 }
 
@@ -129,7 +157,7 @@ html {
 
 .images-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
   padding: 5% 0px;
 }
@@ -149,23 +177,23 @@ html {
   width: 100%;
 }
 
-.inline-footer-nav{
+.inline-footer-nav {
   display: grid;
-  grid-template-rows: repeat(1, 1fr);  
-  grid-auto-flow: column;              
-  grid-auto-columns: 23%;              
+  grid-template-rows: repeat(1, 1fr);
+  grid-auto-flow: column;
+  grid-auto-columns: 23%;
   gap: 10px;
   width: 100%;
   padding: 0;
 }
 
-.inline-footer-nav > li{
+.inline-footer-nav>li {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-a > svg {
+a>svg {
   width: 30px;
   height: 30px;
   aspect-ratio: 1/1;
@@ -181,17 +209,20 @@ a > svg {
 
 @media (min-width: 489px) {
   .images-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 10px;
-  padding: 5% 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 5% 0px;
   }
+
   .white-footer {
     display: none;
   }
+
   .white-header-desktop {
     display: grid;
   }
+
   .white-header-mobile {
     display: none;
   }
