@@ -155,6 +155,10 @@ html {
 
 /* CSS MAIN */
 
+.group-text {
+  margin-top: 14%;
+}
+
 .images-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
