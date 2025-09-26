@@ -162,6 +162,10 @@ a > svg {
   aspect-ratio: 1/1;
 }
 
+.menu-ul.inline-footer-nav {
+  padding: 3% 0px;
+}
+
 @media (min-width: 489px) {
   .images-grid {
   display: grid;
