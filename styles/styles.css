@@ -156,6 +156,12 @@ html {
   justify-content: center;
 }
 
+a > svg {
+  width: 30px;
+  height: 30px;
+  aspect-ratio: 1/1;
+}
+
 @media (min-width: 489px) {
   .images-grid {
   display: grid;
