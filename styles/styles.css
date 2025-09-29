@@ -171,6 +171,37 @@ html {
   height: auto;
 }
 
+/* CSS ZOEKEN */
+
+.heading-resultaten {
+  color: white;
+}
+
+.section-wrapper-zoeken {
+  margin: 20% 20px 0px 20px;
+}
+
+label {
+  display: none;
+}
+
+input,
+label {
+  margin: 0.4rem 0;
+  
+}
+
+input {
+  border-radius: 20px;
+  background-color: white;
+}
+
+input::placeholder {
+  font-size: .8rem;
+  padding-left: 5%;
+}
+
+
 /* CSS FOOTER */
 
 .white-footer {
