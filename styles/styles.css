@@ -164,6 +164,10 @@ html {
 
 /* CSS MAIN */
 
+
+.gridselector {
+  cursor: pointer;
+}
 /* CSS GRID VIEW */
 .images-grid {
   display: grid;
@@ -294,3 +298,31 @@ a>svg {
     display: none;
   }
 }
+
+/* css gridselector */
+
+.images-grid,
+.images-list {
+  transition: 0.4s ease;
+}
+
+.images-grid:not(.active),
+.images-list:not(.active) {
+  max-height: 0;
+  opacity: 0;
+  transform: scale(.98);
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+}
+
+.images-grid.active,
+.images-list.active {
+  max-height: 5000px;
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+
