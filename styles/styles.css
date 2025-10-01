@@ -26,6 +26,9 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+a{
+  font-family: sans-serif;
+}
 /* 6. Improve media defaults */
 img,
 picture,
@@ -165,7 +168,7 @@ html {
   top: 3vh;
   position: absolute;
   background-color: #f1f1f1;
-  min-width: 160px;
+  width: 110vw;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -181,15 +184,14 @@ html {
 
 .dropdown:hover .dropdown-content {display: block;}
 
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
-
 .inline-nav>li {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .inline-nav>.logo {
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .inline-nav>.group-selector {
