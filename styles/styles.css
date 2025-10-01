@@ -124,7 +124,7 @@ html {
   background-color: white;
   position: sticky;
   top: 0;
-  width: 100vw;
+  width: 100%;
 }
 
 /* CSS Header */
@@ -199,7 +199,7 @@ html {
   display: flex;
   flex-direction: row;
   background-color: white;
-  width: 90vw;
+  width: 100%;
   margin: 0 auto;
   border-radius: 20px;
 }
