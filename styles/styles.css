@@ -81,7 +81,11 @@ h5,
 h6 {
   text-wrap: balance;
 }
-
+figure {
+  margin: 0px;
+  margin-block-start: 0px;
+  margin-inline-start: 0px;
+}
 /*
   10. Create a root stacking context
 */
@@ -92,13 +96,17 @@ h6 {
 
 ul {
   list-style: none;
+  padding: 0px;
 }
 
 html {
   background-color: #224455;
 }
 
-main {}
+.image {
+  width: 100%;
+  height: auto;
+}
 
 .icon {
   width: 19px;
@@ -156,21 +164,39 @@ html {
 
 /* CSS MAIN */
 
+/* CSS GRID VIEW */
 .images-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
   padding: 5% 0px;
 }
+/* CSS LIST VIEW */
+
+.image-list {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  width: 90vw;
+  margin: 0 auto;
+  border-radius: 20px;
+}
+
+.image-list > img {
+max-width: 30vw;
+border-radius: 20px 0px 0px 20px;
+}
+
+.images-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
 .inline-group {
   display: flex;
   gap: 20px;
 
-}
-.image {
-  width: 100%;
-  height: auto;
 }
 
 /* CSS ZOEKEN */
