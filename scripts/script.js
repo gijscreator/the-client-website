@@ -1,20 +1,24 @@
-console.log("init toggle");
+const button = document.querySelector(".gridselector");
 
-document.addEventListener("click", function (event) {
-  const trigger = event.target.closest(".gridselector");
-  if (!trigger) return; 
+const grid = document.querySelector(".images-grid");
+const list = document.querySelector(".images-list");
 
-  const list = document.querySelector(".images-list");
-  const grid = document.querySelector(".images-grid");
-
-  if (!list || !grid) {
-    console.warn("Missing .images-list or .images-grid");
-    return;
-  }
-
+button.addEventListener("click", function () {
   const listIsActive = list.classList.contains("active");
-  list.classList.toggle("active", !listIsActive);
-  grid.classList.toggle("active", listIsActive);
 
-  console.log("toggled:", { listActive: list.classList.contains("active"), gridActive: grid.classList.contains("active") });
+  if (listIsActive) {
+    list.classList.remove("active");
+    grid.classList.add("active");
+
+    button.classList.remove("list-active");
+
+    console.log("Now showing: GRID");
+  } else {
+    grid.classList.remove("active");
+    list.classList.add("active");
+
+    button.classList.add("list-active");
+
+    console.log("Now showing: LIST");
+  }
 });

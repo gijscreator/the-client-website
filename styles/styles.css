@@ -162,6 +162,19 @@ html {
   justify-content: center;
 }
 
+.gridselector .list-icon {
+  display: none;
+}
+
+.gridselector.list-active .grid-icon {
+  display: none;
+}
+
+.gridselector.list-active .list-icon {
+  display: flex;
+}
+
+
 /* CSS MAIN */
 
 
