@@ -1,3 +1,1 @@
 // JS
-
-document.querySelector(li)

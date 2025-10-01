@@ -51,7 +51,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+figcaption {
   font-family: sans-serif;
   overflow-wrap: break-word;
 }
@@ -62,7 +63,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+figcaption {
   color: white;
 }
 
@@ -110,9 +112,8 @@ html {
 /* CSS Header Desktop*/
 .white-header-desktop {
   background-color: white;
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
   width: 100%;
 }
 
@@ -120,9 +121,8 @@ html {
 
 .white-header-mobile {
   background-color: white;
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
   width: 100%;
 }
 
@@ -134,6 +134,7 @@ html {
   gap: 10px;
   width: 100%;
   padding: 0;
+  margin-bottom: 10px;
 }
 
 .inline-nav>li {
@@ -155,10 +156,6 @@ html {
 
 /* CSS MAIN */
 
-.group-text {
-  margin-top: 14%;
-}
-
 .images-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -166,6 +163,11 @@ html {
   padding: 5% 0px;
 }
 
+.inline-group {
+  display: flex;
+  gap: 20px;
+
+}
 .image {
   width: 100%;
   height: auto;
@@ -178,7 +180,9 @@ html {
 }
 
 .section-wrapper-zoeken {
-  margin: 20% 20px 0px 20px;
+  display: grid;
+  place-items: center;
+  padding: 20px 0px;
 }
 
 label {
@@ -192,8 +196,10 @@ label {
 }
 
 input {
-  border-radius: 20px;
   background-color: white;
+  width: 80vw;
+  max-width: 90vw;
+  border-radius: 20px;
 }
 
 input::placeholder {
