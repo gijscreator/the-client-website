@@ -335,7 +335,6 @@ a>svg {
 
 .images-grid.active,
 .images-list.active {
-  max-height: 5000px;
   opacity: 1;
   transform: none;
   pointer-events: auto;
