@@ -26,9 +26,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-a{
-  font-family: sans-serif;
-}
 /* 6. Improve media defaults */
 img,
 picture,
@@ -128,10 +125,6 @@ html {
   width: 100%;
 }
 
-.gridselector {
-  cursor: pointer;
-}
-
 /* CSS Header */
 
 .white-header-mobile {
@@ -141,57 +134,24 @@ html {
   width: 100%;
 }
 
-.inline-nav{
+.inline-nav {
   display: grid;
   grid-template-rows: repeat(1, 1fr);
   grid-auto-flow: column;
   grid-auto-columns: 33%;
   gap: 10px;
   width: 100%;
-  height: 60px;
   padding: 0;
   margin-bottom: 10px;
 }
 
-.dropbtn {
-  font-size: 16px;
-  text-decoration: underline;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  top: 3vh;
-  position: absolute;
-  background-color: #f1f1f1;
-  width: 110vw;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {background-color: #ddd;}
-
-.dropdown:hover .dropdown-content {display: block;}
-
 .inline-nav>li {
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 .inline-nav>.logo {
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .inline-nav>.group-selector {
@@ -205,28 +165,74 @@ html {
 /* CSS MAIN */
 
 /* CSS GRID VIEW */
-
 .images-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
   padding: 5% 0px;
 }
+/* CSS LIST VIEW */
 
-.image {
-  width: 100%;
-  height: auto;
+.image-list {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  width: 90vw;
+  margin: 0 auto;
+  border-radius: 20px;
 }
 
-.inline-group > * {
-  display: inline;
+.image-list > img {
+max-width: 30vw;
+border-radius: 20px 0px 0px 20px;
 }
 
-/* .image > img {
-  border-radius: 10px;
+.images-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inline-group {
+  display: flex;
+  gap: 20px;
 
 }
-*/
+
+/* CSS ZOEKEN */
+
+.heading-resultaten {
+  color: white;
+}
+
+.section-wrapper-zoeken {
+  display: grid;
+  place-items: center;
+  padding: 20px 0px;
+}
+
+label {
+  display: none;
+}
+
+input,
+label {
+  margin: 0.4rem 0;
+  
+}
+
+input {
+  background-color: white;
+  width: 80vw;
+  max-width: 90vw;
+  border-radius: 20px;
+}
+
+input::placeholder {
+  font-size: .8rem;
+  padding-left: 5%;
+}
+
 
 /* CSS FOOTER */
 
