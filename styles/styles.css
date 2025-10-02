@@ -124,7 +124,10 @@ html {
 }
 
 /* CSS Header */
-
+.logo {
+  width: 100%;
+  height: auto;
+}
 .white-header-mobile {
   background-color: white;
   position: sticky;
