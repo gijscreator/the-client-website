@@ -19,3 +19,5 @@ function toggleView() {
 }
 
 button.addEventListener("click", toggleView);
+
+const images = ['assets/handgeschaaft.jpg']
