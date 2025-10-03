@@ -17,7 +17,3 @@ function toggleView() {
     console.log("Now showing LIST");
   }
 }
-
-button.addEventListener("click", toggleView);
-
-const images = ['assets/handgeschaaft.jpg']
