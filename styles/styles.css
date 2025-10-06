@@ -46,8 +46,12 @@ select {
   font: inherit;
 }
 
+input {
+  all:unset;
+}
+
 /* 8. Avoid text overflows */
-p,
+a,
 h1,
 h2,
 h3,
@@ -123,11 +127,17 @@ html {
   width: 100%;
 }
 
+.menu-link {
+  color: #224455;
+  text-decoration: none;
+}
 /* CSS Header */
 .logo {
   width: 100%;
   height: auto;
 }
+
+
 .white-header-mobile {
   background-color: white;
   position: sticky;
@@ -142,8 +152,8 @@ html {
   grid-auto-columns: 33%;
   gap: 10px;
   width: 100%;
-  padding: 0;
-  margin-bottom: 10px;
+  padding: 20px 0px;
+  margin-bottom: 0px;
 }
 
 .inline-nav>li {
@@ -195,7 +205,6 @@ html {
   transform: none;
   pointer-events: auto;
 }
-
 
 
 /* CSS MAIN */
@@ -261,19 +270,33 @@ label {
   
 }
 
-input {
+.zoeken-zoekpagina {
   background-color: white;
   width: 80vw;
   max-width: 90vw;
   border-radius: 20px;
 }
 
-input::placeholder {
-  font-size: .8rem;
-  padding-left: 5%;
+.header-zoeken {
+  background-color: #224455;
+  color: white;
+  font-family: sans-serif;
+  width: 80vw;
+  max-width: 20vw;
+  border-radius: 20px;
+  height: 80%;
 }
 
 
+
+input::placeholder {
+  font-size: .8rem;
+  margin-left: 2%;
+}
+
+input::-webkit-textfield-decoration-container {
+  margin-left: 10%;
+}
 /* CSS FOOTER */
 
 .white-footer {
