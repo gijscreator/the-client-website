@@ -12,8 +12,8 @@ function toggleView() {
     button.classList.remove("list-active");
     console.log("Now showing GRID");
 
-    // List view active
-
+    // Grid view active
+    
   } else {
     grid.classList.remove("active");
     list.classList.add("active");
