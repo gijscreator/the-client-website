@@ -1,4 +1,4 @@
-const button = document.querySelector(".gridselector");
+const button = document.querySelector(".grid-selector");
 const grid = document.querySelector(".images-grid");
 const list = document.querySelector(".images-list");
 
