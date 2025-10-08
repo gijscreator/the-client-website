@@ -1,21 +1,12 @@
-const button = document.querySelector(".gridselector");
-const grid = document.querySelector(".images-grid");
-const list = document.querySelector(".images-list");
 
-function toggleView() {
-  const listIsActive = list.classList.contains("active");
+const button = document.querySelector(".grid-list-toggle");
+const gallery = document.querySelector("article.images ul");
 
-  if (listIsActive) {
-    list.classList.remove("active");
-    grid.classList.add("active");
-    button.classList.remove("list-active");
-    console.log("Now showing GRID");
-  } else {
-    grid.classList.remove("active");
-    list.classList.add("active");
-    button.classList.add("list-active");
-    console.log("Now showing LIST");
-  }
+if (button && gallery) {
+  button.addEventListener("click", () => {
+    const showingGrid = gallery.classList.contains("images-grid");
+    gallery.classList.toggle("images-grid", !showingGrid);
+    gallery.classList.toggle("images-list", showingGrid);
+    console.log(showingGrid ? "Now showing LIST" : "Now showing GRID");
+  });
 }
-
-button.addEventListener("click", toggleView);
