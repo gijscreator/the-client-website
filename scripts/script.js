@@ -5,15 +5,11 @@ const list = document.querySelector(".images-list");
 function toggleView() {
   const listIsActive = list.classList.contains("active");
 
-  // Grid view active
   if (listIsActive) {
     list.classList.remove("active");
     grid.classList.add("active");
     button.classList.remove("list-active");
     console.log("Now showing GRID");
-
-    // Grid view active
-    
   } else {
     grid.classList.remove("active");
     list.classList.add("active");
@@ -21,3 +17,5 @@ function toggleView() {
     console.log("Now showing LIST");
   }
 }
+
+button.addEventListener("click", toggleView);

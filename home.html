@@ -7,9 +7,8 @@
     <title>Snappthis</title>
 </head>
 <body>
-
-    <!-- HEADER-->
-    <header>
+    <!-- HEADER MOBIEL-->
+    <header class="white-header-mobile">
         <nav>
             <ul class="menu-ul inline-nav">
                 <li class="logo">
@@ -17,18 +16,8 @@
                         <img src="assets/Snappthis-logo.png" alt="snappthis-logo">
                     </a>
                 </li>
-                <li class="group-selector">
-                    <ul class="dropdown-menu">
-                        <li>
-                        <a class="menu-link" href="#">Playful</a>
-                        </li>
-                        <li>
-                        <a class="menu-link" href="#">Funny</a>
-                        </li>
-                        <li>
-                        <a class="menu-link" href="#">Superman&nbsp;amsterdam</a>
-                        </li>
-                    </ul>
+                <li class="dropdown">
+                    <p>Groep 3A</p> 
                 </li>
                 <li class="grid-view">
                     <button class="gridselector">
@@ -36,16 +25,38 @@
                     <img class="icon list-icon" src="assets/list.svg" alt="list">
                     </button>
                 </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- HEADER DESKTOP-->
+    <header class="white-header-desktop">
+        <nav>
+            <ul class="menu-ul inline-nav">
+                <li class="logo">
+                    <img src="assets/Snappthis-logo.png" alt="snappthis-logo">
+                </li>
+                <li class="group-selector">
+                    <ul class="dropdown-menu">
+                        <li>
+                        <a href="#">Playful</a>
+                        </li>
+                        <li>
+                        <a href="#">Funny</a>
+                        </li>
+                        <li>
+                        <a href="#">Superman&nbsp;amsterdam</a>
+                        </li>
+                    </ul>
+                </li>
                 <li>
-                    <input class="header-zoeken" type="search" id="site-search" placeholder="Zoek de site" name="q" />
+                zoekbalk komt hier
                 </li>
                 <li class="account-icon">
-                    <img class="account-icon" src="assets/group-icon.png" alt="account">
+                    <img src="assets/group-icon.png" alt="account">
                 </li>
             </ul>
         </nav>
     </header>
-    
     <!-- MAIN-->
     <main>
         <section>
@@ -55,74 +66,141 @@
                 <p>Groep 3A</p>
             </figcaption>
             </figure>
-            <article class="view-switcher">
-                <h2 class="sr-only"> Overzicht van snapps</h2>
-                <ul class="images-grid active">
-                    <li>
-                        <figure class="image">
-                            <img src="assets/handgeschaaft.jpg" alt="Fietser_gewond">
-                        </figure>
-                    </li>
-                    <li>
-                        <figure class="image">
-                            <img src="assets/autofiat.jpg" alt="Fietser_gewond">
-                        </figure>
-                    </li>
-                    <li>
-                        <figure class="image">
-                            <img src="assets/bikerental.jpg" alt="Fietser_gewond">
-                        </figure>
-                    </li>
-                    <li>
-                        <figure class="image">
-                            <img src="assets/fietaanpaal.jpg" alt="Fietser_gewond">
-                        </figure>
-                    </li>
-                    <li>
-                        <figure class="image">
-                            <img src="assets/fietsbijtrap.jpg" alt="Fietser_gewond">
-                        </figure>
-                    </li>
-                    <li>
-                        <figure class="image">
-                            <img src="assets/fietsbord.jpg" alt="Fietser_gewond">
-                        </figure>
-                    </li>
-                    <li>
-                        <figure class="image">
-                            <img src="assets/fietskind.jpg" alt="Fietser_gewond">
-                        </figure>
-                    </li>
-                    <li>
-                        <figure class="image">
-                            <img src="assets/fietspad.jpg" alt="Fietser_gewond">
-                        </figure>
-                    </li>
-                    <li>
-                        <figure class="image">
-                            <img src="assets/onibus.jpg" alt="Fietser_gewond">
-                        </figure>
-                    </li>
-                    <li>
-                        <figure class="image">
-                            <img src="assets/stoplicht.jpg" alt="Fietser_gewond">
-                        </figure>
-                    </li>
-                    <li>
-                        <figure class="image">
-                            <img src="assets/fietsbord.jpg" alt="Fietser_gewond">
-                        </figure>
-                    </li>
-                    <li>
-                        <figure class="image">
-                            <img src="assets/fietsbord.jpg" alt="Fietser_gewond">
-                        </figure>
-                    </li>
-                </ul>
-            </article>
+            <!-- image grid-->
+            <section class="view-switcher">
+            <ul class="images-grid active">
+                <li>
+                    <figure class="image">
+                        <img src="assets/handgeschaaft.jpg" alt="Fietser_gewond">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="image">
+                        <img src="assets/autofiat.jpg" alt="Fietser_gewond">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="image">
+                        <img src="assets/bikerental.jpg" alt="Fietser_gewond">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="image">
+                        <img src="assets/fietaanpaal.jpg" alt="Fietser_gewond">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="image">
+                        <img src="assets/fietsbijtrap.jpg" alt="Fietser_gewond">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="image">
+                        <img src="assets/fietsbord.jpg" alt="Fietser_gewond">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="image">
+                        <img src="assets/fietskind.jpg" alt="Fietser_gewond">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="image">
+                        <img src="assets/fietspad.jpg" alt="Fietser_gewond">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="image">
+                        <img src="assets/onibus.jpg" alt="Fietser_gewond">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="image">
+                        <img src="assets/stoplicht.jpg" alt="Fietser_gewond">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="image">
+                        <img src="assets/fietsbord.jpg" alt="Fietser_gewond">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="image">
+                        <img src="assets/fietsbord.jpg" alt="Fietser_gewond">
+                    </figure>
+                </li>
+            </ul>
+            <ul class="images-list">
+                <li>
+                    <figure class="image-list">
+                        <img src="assets/handgeschaaft.jpg" alt="Fietser_gewond">
+                        <h3>
+                            Locatie
+                        </h3>
+                        <p>
+
+                        </p>
+                    </figure>
+                </li>
+                <li>
+                    <figure class="image-list">
+                        <img src="assets/autofiat.jpg" alt="Fietser_gewond">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="image-list">
+                        <img src="assets/bikerental.jpg" alt="Fietser_gewond">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="image-list">
+                        <img src="assets/fietaanpaal.jpg" alt="Fietser_gewond">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="image-list">
+                        <img src="assets/fietsbijtrap.jpg" alt="Fietser_gewond">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="image-list">
+                        <img src="assets/fietsbord.jpg" alt="Fietser_gewond">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="image-list">
+                        <img src="assets/fietskind.jpg" alt="Fietser_gewond">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="image-list">
+                        <img src="assets/fietspad.jpg" alt="Fietser_gewond">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="image-list">
+                        <img src="assets/onibus.jpg" alt="Fietser_gewond">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="image-list">
+                        <img src="assets/stoplicht.jpg" alt="Fietser_gewond">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="image-list">
+                        <img src="assets/fietsbord.jpg" alt="Fietser_gewond">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="image-list">
+                        <img src="assets/fietsbord.jpg" alt="Fietser_gewond">
+                    </figure>
+                </li>
+            </ul>
+            </section>
         </section>
     </main>
-
     <!-- FOOTER-->
     <footer class="white-footer">
         <nav>
