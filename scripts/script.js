@@ -1,15 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-
-  const button = document.querySelector(".grid-list-toggle");
-  const gallery = document.querySelector("article.images ul");
-  if (button && gallery) {
-    button.addEventListener("click", () => {
-      const showingGrid = gallery.classList.contains("images-grid");
-      gallery.classList.toggle("images-grid", !showingGrid);
-      gallery.classList.toggle("images-list", showingGrid);
-    });
-  }
-
   const images = [
     { src: "assets/handgeschaaft.jpg", alt: "Handgeschaaft", name: "Anna van Veen", location: "Amsterdam Oost" },
     { src: "assets/autofiat.jpg",       alt: "Auto Fiat",     name: "Bram de Groot", location: "Rotterdam Centrum" },
@@ -46,27 +35,44 @@ document.addEventListener("DOMContentLoaded", function () {
     </ul>
   `;
 
-  const list = document.querySelector(".images-list");
-  if (list) {
-    list.innerHTML = "";
-    for (let i = 0; i < images.length; i++) {
-      const it = images[i];
-      list.innerHTML += `
-        <li data-index="${i}">
-          <figure>
-            <img src="${it.src}" alt="${it.alt}" loading="lazy">
-            <article>
-              <h4>${it.name}</h4>
-              <h5>${it.location}</h5>
-              ${iconsHTML}
-            </article>
-          </figure>
-        </li>
-      `;
+  // Use the single UL inside article.images no matter its class
+  const gallery = document.querySelector("article.images ul");
+
+  // If this page is the list page
+  if (gallery) {
+    // Ensure it has at least one mode class for CSS (mobile could start as grid)
+    if (!gallery.classList.contains("images-grid") && !gallery.classList.contains("images-list")) {
+      gallery.classList.add("images-list");
     }
 
-    list.addEventListener("click", (e) => {
-      const li = e.target.closest("li");
+    // Render all items in one go (faster + safer)
+    gallery.innerHTML = images.map((it, i) => `
+      <li data-index="${i}">
+        <figure>
+          <img src="${it.src}" alt="${it.alt}" loading="lazy">
+          <article>
+            <h4>${it.name}</h4>
+            <h5>${it.location}</h5>
+            ${iconsHTML}
+          </article>
+        </figure>
+      </li>
+    `).join("");
+
+    // Toggle grid/list on the SAME element
+    const button = document.querySelector(".grid-list-toggle");
+    if (button) {
+      button.addEventListener("click", () => {
+        const showingGrid = gallery.classList.contains("images-grid");
+        gallery.classList.toggle("images-grid", !showingGrid);
+        gallery.classList.toggle("images-list",  showingGrid);
+      });
+    }
+
+    // Delegate clicks
+    gallery.addEventListener("click", (e) => {
+      const target = e.target.nodeType === Node.TEXT_NODE ? e.target.parentElement : e.target;
+      const li = target && target.closest ? target.closest("li") : null;
       if (!li) return;
       const i = li.getAttribute("data-index");
       if (i !== null) {
@@ -74,9 +80,10 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    return;
+    return; // stop here on list page
   }
 
+  // Otherwise, detail page:
   const params = new URLSearchParams(window.location.search);
   if (params.has("i")) {
     const index = parseInt(params.get("i"), 10);
@@ -84,9 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const main = document.querySelector("main") || document.body;
 
     if (!item) {
-      main.innerHTML = `
-        <p>Foto niet gevonden.</p>
-      `;
+      main.innerHTML = `<p>Foto niet gevonden.</p>`;
       return;
     }
 
