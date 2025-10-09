@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
-
+// image array 
 (() => {
   const images = [
     { src: "assets/handgeschaaft.jpg", alt: "Handgeschaaft", name: "Anna van Veen", location: "Amsterdam Oost" },
