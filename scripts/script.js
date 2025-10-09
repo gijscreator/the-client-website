@@ -1,4 +1,3 @@
-
 const button = document.querySelector(".grid-list-toggle");
 const gallery = document.querySelector("article.images ul");
 
