@@ -235,6 +235,10 @@ figure:nth-of-type(1) {
   @media (min-width: 1000px) {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
+  
+  figure > article {
+      display: none;
+    }
 
   li {
     figure {
@@ -277,7 +281,7 @@ ul.images-list {
       height: 160px;    
     }
 
-    article {
+    figure > article {
       display: flex;
       flex-direction: column;
       gap: 10px;
