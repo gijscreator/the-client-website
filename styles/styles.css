@@ -276,21 +276,47 @@ ul.images-list {
       grid-template-columns: 160px 1fr;  
       height: 160px;    
     }
-  
 
-  figure > img {
-    width: 100%;
-    height: auto;
-    max-width: none;             
-    object-fit: cover;                       
-    border-radius: 20px 0 0 20px;            
-    display: block;
-
-    @media (min-width: 498px) {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+    article {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
-  }
+    
+    ul {
+      display: flex;
+      gap: 10%;
+
+      li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+          width: 25px;
+          height: 25px;
+        }
+      }
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      max-width: none;             
+      object-fit: cover;                       
+      border-radius: 20px 0 0 20px;            
+      display: block;
+
+      @media (min-width: 498px) {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
     figure *:not(img) {
+      color: #224455;
+    }
+  
+    h4 {
       color: #224455;
     }
   }
