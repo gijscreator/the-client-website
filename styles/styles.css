@@ -384,11 +384,23 @@ footer {
       li {
         display: flex;
         justify-content: center;
+        flex-direction: column;
 
-        a>svg {
+        figure {
+          display: flex;
+          justify-content: center;
+        }
+
+        figure>svg {
           width: 25px;
           height: 25px;
           aspect-ratio: 1/1;
+        }
+        
+        p {
+          color: #224455;
+          font-size: .9rem;
+          text-align: center;
         }
       }
     }
