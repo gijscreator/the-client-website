@@ -13,8 +13,9 @@ html {
   background-color: #224455;
 }
 
+/* add padding for top and bottom bar */
 main {
-  padding: 20px;
+  padding: 4vh 0px 10vh 0px;
 }
 
 ul,
@@ -285,25 +286,24 @@ ul.images-list {
 
   li > figure {
     display: grid;               
-    grid-template-columns: 100px 1fr;        
+    grid-template-columns: 29vw 1fr;        
     column-gap: 16px;
     align-items: center;
     background: #fff;
     border-radius: 20px;
-    overflow: hidden;                        
-    height: 100px;                           
-    padding-right: 16px;  
     
     @media (min-width: 598px) {
-      grid-template-columns: 140px 1fr;  
-      height: 100px;    
+      grid-template-columns: 20vw 1fr;    
     }
 
     @media (min-width: 1000px) {
-      grid-template-columns: 120px 1fr;  
-      height: 100px;    
+      grid-template-columns: 15vw 1fr;     
     } 
 
+    img {
+      border-radius: 20px 0px 0px 20px;
+    }
+    
     article {
       display: flex;
       flex-direction: column;
