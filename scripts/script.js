@@ -1,17 +1,5 @@
-document.addEventListener("DOMContentLoaded", function () {
-
-  const button = document.querySelector(".grid-list-toggle");
-  const gallery = document.querySelector("article.images ul");
-  if (button && gallery) {
-    button.addEventListener("click", () => {
-      const showingGrid = gallery.classList.contains("images-grid");
-      gallery.classList.toggle("images-grid", !showingGrid);
-      gallery.classList.toggle("images-list", showingGrid);
-    });
-  }
-});
-// image array 
-(() => {
+document.addEventListener("DOMContentLoaded", () => {
+  // --- Data ---------------------------------------------------
   const images = [
     { src: "assets/handgeschaaft.jpg", alt: "Handgeschaaft", name: "Anna van Veen", location: "Amsterdam Oost" },
     { src: "assets/autofiat.jpg",       alt: "Auto Fiat",     name: "Bram de Groot", location: "Rotterdam Centrum" },
@@ -28,15 +16,19 @@ document.addEventListener("DOMContentLoaded", function () {
     { src: "assets/onibus.jpg",         alt: "Bus",           name: "Gwen Vos",      location: "Eindhoven" }
   ];
 
-  const detailImg   = document.getElementById("detail-image");
-  const detailName  = document.getElementById("detail-name");
-  const detailLoc   = document.getElementById("detail-location");
-  const isDetail    = !!(detailImg && detailName && detailLoc);
+  // --- Elements -----------------------------------------------
+  const button  = document.querySelector(".grid-list-toggle");
+  const gallery = document.querySelector("article.images ul");
+
+  // Detail page?
+  const detailImg  = document.getElementById("detail-image");
+  const detailName = document.getElementById("detail-name");
+  const detailLoc  = document.getElementById("detail-location");
+  const isDetail   = !!(detailImg && detailName && detailLoc);
 
   if (isDetail) {
     const params = new URLSearchParams(location.search);
-    const idxStr = params.get("i");
-    const idx = idxStr !== null ? parseInt(idxStr, 10) : NaN;
+    const idx = Number.parseInt(params.get("i") ?? "", 10);
     const item = Number.isInteger(idx) ? images[idx] : null;
 
     if (item) {
@@ -45,23 +37,22 @@ document.addEventListener("DOMContentLoaded", function () {
       detailName.textContent = item.name;
       detailLoc.textContent  = item.location;
     } else {
-
       detailImg.remove();
       const fig = document.querySelector(".detail-card") || document.querySelector("figure");
-      if (fig) {
-        fig.insertAdjacentHTML("beforeend", `<p style="margin-top:12px;">Foto niet gevonden.</p>`);
-      }
+      if (fig) fig.insertAdjacentHTML("beforeend", `<p style="margin-top:12px;">Foto niet gevonden.</p>`);
     }
-    return;
+    return; // stop here on detail page
   }
 
-  const gallery = document.querySelector("article.images ul");
-  if (!gallery) return; 
+  // Gallery page guard
+  if (!gallery) return;
 
+  // Ensure starting layout class exists
   if (!gallery.classList.contains("images-grid") && !gallery.classList.contains("images-list")) {
     gallery.classList.add("images-grid");
   }
 
+  // Render items
   gallery.innerHTML = images.map((it, i) => `
     <li data-index="${i}">
       <figure>
@@ -74,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </li>
   `).join("");
 
+  // Click-through to detail
   gallery.addEventListener("click", (e) => {
     const li = e.target.closest("li");
     if (!li) return;
@@ -81,13 +73,15 @@ document.addEventListener("DOMContentLoaded", function () {
     if (i != null) location.href = `detailpagina.html?i=${encodeURIComponent(i)}`;
   });
 
-  const toggleBtn = document.querySelector(".grid-list-toggle");
-  if (toggleBtn) {
-    toggleBtn.addEventListener("click", () => {
+  // Single, reliable toggle handler
+  if (button) {
+    button.addEventListener("click", () => {
       const isGrid = gallery.classList.contains("images-grid");
       gallery.classList.toggle("images-grid", !isGrid);
       gallery.classList.toggle("images-list",  isGrid);
+
+      // (optional) keep an accessible state on the button
+      button.setAttribute("aria-pressed", String(!isGrid));
     });
   }
-})();
-
+});
