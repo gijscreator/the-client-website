@@ -396,6 +396,10 @@ footer {
           height: 25px;
           aspect-ratio: 1/1;
         }
+
+        svg.active > path {
+          fill: green;
+        }
         
         p {
           color: #224455;
